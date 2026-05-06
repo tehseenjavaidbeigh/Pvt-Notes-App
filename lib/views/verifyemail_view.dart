@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:pvtnotes/constants/routes.dart';
 
 class VerifyEmail extends StatefulWidget {
   const VerifyEmail({super.key});
@@ -28,7 +29,7 @@ class _VerifyEmailState extends State<VerifyEmail> {
               await FirebaseAuth.instance.signOut();
               Navigator.of(
                 context,
-              ).pushNamedAndRemoveUntil("/login/", (route) => false);
+              ).pushNamedAndRemoveUntil(loginRoute, (route) => false);
             },
             child: const Text("Login with another account"),
           ),

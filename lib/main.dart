@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:pvtnotes/constants/routes.dart';
 import 'package:pvtnotes/views/Register_view.dart';
 import 'package:pvtnotes/views/login_view.dart';
 import 'package:pvtnotes/views/verifyemail_view.dart';
@@ -81,7 +82,7 @@ class _MainUiState extends State<MainUi> {
                     await FirebaseAuth.instance.signOut();
                     Navigator.of(
                       context,
-                    ).pushNamedAndRemoveUntil("/login/", (route) => false);
+                    ).pushNamedAndRemoveUntil(loginRoute, (route) => false);
                   }
               }
             },
