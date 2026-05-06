@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'dart:developer' as devtools show log;
 
 import 'package:pvtnotes/constants/routes.dart';
+import 'package:pvtnotes/utilities/show_error_dialog.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -65,7 +66,7 @@ class _LoginViewState extends State<LoginView> {
                 ).pushNamedAndRemoveUntil(notesRoute, (route) => false);
               } on FirebaseAuthException catch (e) {
                 if (e.code == 'invalid-credential') {
-                  devtools.log("Invalid Credentials");
+                  showErrorDialog(context, "Invalid Email or Password");
                 }
               }
             },
