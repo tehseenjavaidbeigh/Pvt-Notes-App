@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "538478411887",
+    "project_id": "pvt-notes",
+    "storage_bucket": "pvt-notes.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:538478411887:android:036b8fae9ae0dec4cd4d9a",
+        "android_client_info": {
+          "package_name": "com.learningstuff.pvtnotes"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAb21XOaK4L54AS4rmCgcGhCXyHUJG_wSk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
