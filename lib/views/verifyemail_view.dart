@@ -23,6 +23,15 @@ class _VerifyEmailState extends State<VerifyEmail> {
             },
             child: const Text("SEND EMAIL VERIFICATION"),
           ),
+          TextButton(
+            onPressed: () async {
+              await FirebaseAuth.instance.signOut();
+              Navigator.of(
+                context,
+              ).pushNamedAndRemoveUntil("/login/", (route) => false);
+            },
+            child: const Text("Login with another account"),
+          ),
         ],
       ),
     );
