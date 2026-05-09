@@ -13,10 +13,18 @@ class _VerifyEmailState extends State<VerifyEmail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Verify Email")),
+      appBar: AppBar(
+        title: const Text("Verify Email"),
+        backgroundColor: Colors.blue,
+      ),
       body: Column(
         children: [
-          const Text("Please verify your Email Address."),
+          const Text(
+            "A verification email has been sent to your email address. Please verify your email to continue.",
+          ),
+          const Text(
+            "If you haven't received a verification email, click the button below to resend.",
+          ),
           TextButton(
             onPressed: () async {
               final user = FirebaseAuth.instance.currentUser;
