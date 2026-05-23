@@ -1,12 +1,9 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:pvtnotes/constants/routes.dart';
 import 'package:pvtnotes/services/auth/auth_services.dart';
 import 'package:pvtnotes/views/Notes_view.dart';
 import 'package:pvtnotes/views/Register_view.dart';
 import 'package:pvtnotes/views/login_view.dart';
 import 'package:pvtnotes/views/verifyemail_view.dart';
-import 'firebase_options.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
