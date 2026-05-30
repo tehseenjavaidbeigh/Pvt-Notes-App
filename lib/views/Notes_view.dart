@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pvtnotes/constants/routes.dart';
 import 'package:pvtnotes/enums/menu_action.dart';
 import 'package:pvtnotes/services/auth/auth_services.dart';
+import 'package:pvtnotes/services/crud/notes_services.dart';
 
 class MainUi extends StatefulWidget {
   const MainUi({super.key});
@@ -11,6 +12,21 @@ class MainUi extends StatefulWidget {
 }
 
 class _MainUiState extends State<MainUi> {
+  late final NotesService _notesService;
+  String get userEmail => AuthService.firebase().currentUser!.email!;
+
+  @override
+  initState() {
+    _notesService = NotesService();
+    super.initState();
+  }
+
+  @override
+  dispose() {
+    _notesService.close();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,7 +58,17 @@ class _MainUiState extends State<MainUi> {
           ),
         ],
       ),
-      body: const Text("Hello World!"),
+      body: FutureBuilder(
+        future: _notesService.getOrCreateUser(email: userEmail),
+        builder: (builder, snapshot) {
+          switch (snapshot.connectionState) {
+            case ConnectionState.done:
+              return const Text("Hello");
+            default:
+              return const CircularProgressIndicator();
+          }
+        },
+      ),
     );
   }
 }
