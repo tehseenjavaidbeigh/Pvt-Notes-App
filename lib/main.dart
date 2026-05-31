@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:pvtnotes/services/auth/auth_services.dart';
-import 'package:pvtnotes/views/Notes_view.dart';
+import 'package:pvtnotes/views/notes/Notes_view.dart';
 import 'package:pvtnotes/views/Register_view.dart';
 import 'package:pvtnotes/views/login_view.dart';
+import 'package:pvtnotes/views/notes/new_note_view.dart';
 import 'package:pvtnotes/views/verifyemail_view.dart';
 
 void main() {
@@ -19,6 +20,7 @@ void main() {
         "/register/": (context) => const RegisterView(),
         "/notes/": (context) => const MainUi(),
         "/verify-email/": (context) => const VerifyEmail(),
+        "/notes/new-note/": (context) => const NewNoteView(),
       },
     ),
   );
